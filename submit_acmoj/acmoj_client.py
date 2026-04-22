@@ -44,6 +44,10 @@ class ACMOJClient:
     def _get_git_remote_url(self) -> Optional[str]:
         try:
             url = subprocess.check_output(["git", "remote", "get-url", "origin"], stderr=subprocess.STDOUT).decode().strip()
+            # Sanitize credentials from URL if present (e.g., https://user:token@github.com/...)
+            if url.startswith("http"):
+                # Remove any credentials section
+                url = re.sub(r"^(https?://)([^@/]+@)", r"\1", url)
             return url
         except subprocess.CalledProcessError as e:
             print(f"Error: Failed to get git remote url: {e}")
