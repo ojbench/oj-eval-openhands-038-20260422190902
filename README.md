@@ -132,3 +132,10 @@ CMakeCache.txt
 ### Academic Integrity
 
 If any violations are found during evaluation or code review (including but not limited to using unconventional methods to pass test cases), your final score may be significantly reduced or become **0 points**.
+
+## Implementation Notes
+
+- This repository provides a minimal shim for sjtu::vector in src.hpp by aliasing to std::vector.
+- A Makefile builds an executable named `code` as required by the OJ build process.
+- The ACMOJ client script supports submitting a code file (e.g., src.hpp) and has an optional path to submit the current git repository URL when language/code-file are omitted.
+
