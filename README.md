@@ -139,3 +139,4 @@ If any violations are found during evaluation or code review (including but not 
 - A Makefile builds an executable named `code` as required by the OJ build process.
 - The ACMOJ client script supports submitting a code file (e.g., src.hpp) and has an optional path to submit the current git repository URL when language/code-file are omitted.
 
+\nLast update: 2026-04-22T11:27:39Z
